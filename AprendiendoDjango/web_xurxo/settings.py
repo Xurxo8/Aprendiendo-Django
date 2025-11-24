@@ -41,10 +41,13 @@ INSTALLED_APPS = [
     'ckeditor',
     # Modelos creados por nos
     'posts',
-    'users',
+    # 'users',
+    'users.apps.UsersConfig', 
     'categories',
     'comments',
     'bootstrap4',
+    
+    
 ]
 
 MIDDLEWARE = [

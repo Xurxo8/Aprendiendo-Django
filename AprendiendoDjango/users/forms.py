@@ -2,12 +2,13 @@
 
 # Django
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
 
 # Models
 from django.contrib.auth.models import User
-from users.models import Profile
+# from users.models import Profile
 
-
+# Clase cos campos do formulario de rexistro
 class SignupForm(forms.Form):
     """Sign up form."""
 
@@ -64,7 +65,27 @@ class SignupForm(forms.Form):
         """Create user and profile."""
         data = self.cleaned_data
         data.pop('password_confirmation')
-
         user = User.objects.create_user(**data)
-        profile = Profile(user=user)
-        profile.save()
+        return user
+
+# Clase cos campos do formulario de Login
+class LoginForm(AuthenticationForm):
+    """Login Form"""
+
+    username = forms.CharField(
+        min_length=6,
+        max_length=70,
+        widget=forms.TextInput(attrs={
+            'id': 'id_username',
+            'class': 'form-control',
+            'placeholder': 'Usuario',
+        }),
+    )
+    password = forms.CharField(
+        max_length=70,
+        widget=forms.PasswordInput(attrs={
+            'id': 'id_password',
+            'class': 'form-control',
+            'placeholder': 'Contrasinal',
+        })
+    )

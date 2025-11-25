@@ -8,6 +8,9 @@ from django.contrib.auth import views as auth_views
 # Forms
 from users.forms import SignupForm
 
+def signup_test(request):
+    form = SignupForm()
+    return render(request, 'users/register.html', {'form': form})
 
 class SignupView(FormView):
     """Users sign up view."""
@@ -15,6 +18,10 @@ class SignupView(FormView):
     template_name = 'users/register.html'
     form_class = SignupForm
     success_url = reverse_lazy('users:registerok')
+
+    def get(self, request, *args, **kwargs):
+        print("SignupView GET ejecutada")
+        return super().get(request, *args, **kwargs)
 
     def form_valid(self, form):
         """Save form data."""

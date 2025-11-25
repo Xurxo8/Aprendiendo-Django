@@ -1,20 +1,35 @@
 {% extends "users/base.html" %}
 {% block title %}Web Xurxo - Rexistro{% endblock %}
 {% block content %}
-<form class="form-signin">
+<form method="post" class="form-signin">
+    {% csrf_token %}
     <h1><a href="{% url 'index' %}" class="title-link">Web Xurxo</a></h1>
     <h1 class="h3 mb-3 font-weight-normal">Rexistro</h1>
-    <label for="inputEmail" class="sr-only">Email</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputUsername" class="sr-only">Nome de usuario</label>
-    <input type="text" id="inputUsername" class="form-control" placeholder="Nombre de usuario" required>
-    <label for="inputPassword" class="sr-only">Contrasinal</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
-    <label for="inputPassword" class="sr-only">Repetir contrasinal</label>
-    <input type="password" id="inputPasswordRepeat" class="form-control" placeholder="Repetir contraseña" required>
-    <div class="checkbox mb-3"></div>
+
+    {{ form.email }}
+    {{ form.username }}
+    {{ form.password }}
+    {{ form.password_confirmation }}
+
+    <br>
     
     <button class="btn btn-lg btn-primary btn-block" type="submit">Rexistrarse</button>
+
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+
     <p class="mt-5 mb-3 text-muted">&copy; Web Xurxo {% now "Y" %}</p>
     </form>
 {% endblock %}

@@ -14,20 +14,37 @@ class SignupForm(forms.Form):
     email = forms.CharField(
         min_length=6,
         max_length=70,
-        widget=forms.EmailInput()
+        widget=forms.EmailInput(attrs={
+            'id': 'inputEmail',
+            'class': 'form-control',
+            'placeholder': 'Correo electrónico'
+        })
     )
     username = forms.CharField(
         min_length=6,
         max_length=70,
-        widget=forms.TextInput()
+        widget=forms.TextInput(attrs={
+            'id': 'inputUsername',
+            'class': 'form-control',
+            'placeholder': 'Nome de usuario',
+        }),
     )
     password = forms.CharField(
         max_length=70,
-        widget=forms.PasswordInput()
+        widget=forms.PasswordInput(attrs={
+            'id': 'inputPassword',
+            'class': 'form-control',
+            'placeholder': 'Contrasinal',
+            'auto-complete': 'new-password'
+        })
     )
     password_confirmation = forms.CharField(
         max_length=70,
-        widget=forms.PasswordInput()
+        widget=forms.PasswordInput(attrs={
+            'id': 'inputPasswordRepeat',
+            'class': 'form-control',
+            'placeholder': 'Repetir contrasinal'
+        })
     )
 
 
@@ -39,7 +56,7 @@ class SignupForm(forms.Form):
         password_confirmation = data['password_confirmation']
 
         if password != password_confirmation:
-            raise forms.ValidationError('Las contraseñas no coinciden.')
+            raise forms.ValidationError('Os contrasinais non coinciden.')
 
         return data
 

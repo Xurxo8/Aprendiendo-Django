@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='posts/index.html'), name='index'),
-    path('post/my-post/', TemplateView.as_view(template_name='posts/detail.html'), name='detail'),
-    path('sobre-mi', TemplateView.as_view(template_name='about.html'), name='about'),
+    path('sobre-mi/', TemplateView.as_view(template_name='about.html'), name='about'),
+    path('', include(('posts.urls', 'posts'), namespace='posts')),
     path('', include(('users.urls', 'users'), namespace='users'))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

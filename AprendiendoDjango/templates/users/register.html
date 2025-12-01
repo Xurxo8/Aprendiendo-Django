@@ -3,7 +3,7 @@
 {% block content %}
 <form method="post" class="form-signin">
     {% csrf_token %}
-    <h1><a href="{% url 'index' %}" class="title-link">Web Xurxo</a></h1>
+    <h1><a href="{% url 'posts:index' %}" class="title-link">Web Xurxo</a></h1>
     <h1 class="h3 mb-3 font-weight-normal">Rexistro</h1>
 
     {{ form.email }}

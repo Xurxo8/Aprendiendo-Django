@@ -45,8 +45,7 @@ INSTALLED_APPS = [
     'categories',
     'comments',
     'bootstrap4',
-    
-    
+    'django_cleanup.apps.CleanupConfig'
 ]
 
 MIDDLEWARE = [

@@ -1,6 +1,8 @@
 # Web Xurxo
 
-Proyecto de blog desarrollado con Django 5.2, usando Bootstrap 4 y CKEditor para el editor de texto enriquecido. Permite gestionar posts, categorías, comentarios y usuarios con autenticación.
+Proyecto de blog desarrollado con Django 5.2.4, usando Bootstrap 4 y CKEditor para el editor de texto enriquecido. Permite gestionar posts, categorías, comentarios y usuarios con autenticación.
+
+No es 100% ya que el objetivo de este proyecto es desarrollar una base en Django.
 
 ---
 
@@ -48,9 +50,6 @@ python -m venv env
 windows -> env\Scripts\activate
 linux  -> source env/bin/activate
 ```
+--- 
 
-6. Instala dependencias
-7. Aplica migraciones
-8. Crea un superusuario para la administración
-9. Arranca el servidor
-10. Estructura de cartpetas
+Si tienes alguna duda puedes descargar el manual y seguirlo paso a paso :)

@@ -25,31 +25,6 @@ No es 100% ya que el objetivo de este proyecto es desarrollar una base en Django
 - SQLite (base de datos por defecto)
 - CKEditor (editor de texto enriquecido)
 
----
-
-## Instalación
-
-1. Clona el repositorio:
-
-```bash
-git clone <URL_DEL_REPOSITORIO>
-cd web_xurxo
-```
-
---- 
-
-2. Crea un entorno virtual
-```bash
-python -m venv env
-```
-
----
-
-4. Activa el entorno virtual
-```bash
-windows -> env\Scripts\activate
-linux  -> source env/bin/activate
-```
 --- 
 
 Si tienes alguna duda puedes descargar el manual y seguirlo paso a paso :)

@@ -2,7 +2,7 @@
 
 Proyecto de blog desarrollado con Django 5.2.4, usando Bootstrap 4 y CKEditor para el editor de texto enriquecido. Permite gestionar posts, categorías, comentarios y usuarios con autenticación.
 
-No es 100% ya que el objetivo de este proyecto es desarrollar una base en Django.
+No es 100% funcional ya que el objetivo de este proyecto es desarrollar una base en Django.
 
 ---
 

@@ -32,3 +32,25 @@ Proyecto de blog desarrollado con Django 5.2, usando Bootstrap 4 y CKEditor para
 ```bash
 git clone <URL_DEL_REPOSITORIO>
 cd web_xurxo
+```
+
+--- 
+
+2. Crea un entorno virtual
+```bash
+python -m venv env
+```
+
+---
+
+4. Activa el entorno virtual
+```bash
+windows -> env\Scripts\activate
+linux  -> source env/bin/activate
+```
+
+6. Instala dependencias
+7. Aplica migraciones
+8. Crea un superusuario para la administración
+9. Arranca el servidor
+10. Estructura de cartpetas

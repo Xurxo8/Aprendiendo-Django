@@ -17,8 +17,8 @@ Proyecto de blog desarrollado con Django 5.2, usando Bootstrap 4 y CKEditor para
 ---
 
 ## Tecnologías
-- Python 3.11
-- Django 5.2
+- Python 3.14
+- Django 5.2.8
 - Bootstrap 4
 - SQLite (base de datos por defecto)
 - CKEditor (editor de texto enriquecido)

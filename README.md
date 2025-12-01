@@ -27,4 +27,4 @@ No es 100% ya que el objetivo de este proyecto es desarrollar una base en Django
 
 --- 
 
-Si tienes alguna duda puedes descargar el manual y seguirlo paso a paso :)
+Si tienes alguna duda puedes descargar el manual y seguirlo paso a paso
